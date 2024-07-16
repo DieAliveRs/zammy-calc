@@ -118,7 +118,7 @@ def startupSettings():
         #Modifiers var
         if loadedVariables["disr"] == True: g.disrCheckbox.select()
         if loadedVariables["cade"] == True: g.cadeCheckbox.select()
-        g.divertMenu.set(loadedVariables["divert"])
+        g.divertMenu.set(loadedVariables["divert_res_check"])
         if loadedVariables["refl"] == True: g.reflCheckbox.select()
         if loadedVariables["debil"] == True: g.debilCheckbox.select()
         g.sdMenu.set(loadedVariables["sd"])
