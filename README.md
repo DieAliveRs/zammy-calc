@@ -27,5 +27,7 @@ The source code provided can be executed with python from the CMD:
 
 `python main.py`
 
-Alternatively, an executable version is provided in `zammy_calc.rar`. Simply extract the folder and run `Zammy_calc.exe`
+The source code can be built into an executable with Auto Py to Exe with the `auto_py_to_exe_config.json` file. After the conversion the `\icons` folder will be required to be added to the `...\Zammy_calc\` path.
+
+Alternatively, an executable version is provided in `Zammy_calc.rar`. Simply extract the folder and run `Zammy_calc.exe`
 
