@@ -1,7 +1,7 @@
 # Zamorak Calculator
 
 ## Features
-- Caculate damage received through multiple damage modifiers
+- Caculate damage received from different special attacks through multiple damage modifiers
 - Healing from resonance
 - Adrenaline gained from divert
 - Total and isolated reflected damage from multiple sources
