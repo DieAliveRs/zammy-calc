@@ -1528,17 +1528,19 @@ def calcMageAutosReflect():
 
     if variables["hitcaps"] == "Grey Hp":
         Hitcap = 32500
-        maxFinal = min(maxReflFinal + maxDeflFinal + maxDarkFinal + maxDtbFinal, Hitcap) + maxVengFinal
-        minFinal = min(minReflFinal + minDeflFinal + minDarkFinal + minDtbFinal, Hitcap) + minVengFinal
-        avgFinal = min(avgReflFinal + avgDeflFinal + avgDarkFinal + avgDtbFinal, Hitcap) + avgVengFinal
-        tsFinal = min(tsReflFinal + tsDeflFinal + tsDarkFinal  + tsDtbFinal, Hitcap) + tsVengFinal
+        vengHitcap = 8000
+        maxFinal = min(maxReflFinal + maxDeflFinal + maxDarkFinal + maxDtbFinal, Hitcap) + min(maxVengFinal, vengHitcap)
+        minFinal = min(minReflFinal + minDeflFinal + minDarkFinal + minDtbFinal, Hitcap) + min(minVengFinal, vengHitcap)
+        avgFinal = min(avgReflFinal + avgDeflFinal + avgDarkFinal + avgDtbFinal, Hitcap) + min(avgVengFinal, vengHitcap)
+        tsFinal = min(tsReflFinal + tsDeflFinal + tsDarkFinal  + tsDtbFinal, Hitcap) + min(tsVengFinal, vengHitcap)
 
     elif variables["hitcaps"] == "Green Hp":
         Hitcap = 30000
-        maxFinal = min(maxReflFinal + maxDeflFinal + maxDarkFinal + maxDtbFinal, Hitcap) + maxVengFinal
-        minFinal = min(minReflFinal + minDeflFinal + minDarkFinal + minDtbFinal, Hitcap) + minVengFinal
-        avgFinal = min(avgReflFinal + avgDeflFinal + avgDarkFinal + avgDtbFinal, Hitcap) + avgVengFinal
-        tsFinal = min(tsReflFinal + tsDeflFinal + tsDarkFinal  + tsDtbFinal, Hitcap) + tsVengFinal
+        vengHitcap = 8000
+        maxFinal = min(maxReflFinal + maxDeflFinal + maxDarkFinal + maxDtbFinal, Hitcap) + min(maxVengFinal, vengHitcap)
+        minFinal = min(minReflFinal + minDeflFinal + minDarkFinal + minDtbFinal, Hitcap) + min(minVengFinal, vengHitcap)
+        avgFinal = min(avgReflFinal + avgDeflFinal + avgDarkFinal + avgDtbFinal, Hitcap) + min(avgVengFinal, vengHitcap)
+        tsFinal = min(tsReflFinal + tsDeflFinal + tsDarkFinal  + tsDtbFinal, Hitcap) + min(tsVengFinal, vengHitcap)
 
     else:
         maxFinal = maxReflFinal + maxDeflFinal + maxDarkFinal + maxDtbFinal + maxVengFinal
@@ -1612,17 +1614,19 @@ def calcRangeAutosReflect():
 
     if variables["hitcaps"] == "Grey Hp":
         Hitcap = 32500
-        maxFinal = min(maxReflFinal + maxDeflFinal + maxDarkFinal + maxDtbFinal, Hitcap) + maxVengFinal
-        minFinal = min(minReflFinal + minDeflFinal + minDarkFinal + minDtbFinal, Hitcap) + minVengFinal
-        avgFinal = min(avgReflFinal + avgDeflFinal + avgDarkFinal + avgDtbFinal, Hitcap) + avgVengFinal
-        tsFinal = min(tsReflFinal + tsDeflFinal + tsDarkFinal  + tsDtbFinal, Hitcap) + tsVengFinal
+        vengHitcap = 8000
+        maxFinal = min(maxReflFinal + maxDeflFinal + maxDarkFinal + maxDtbFinal, Hitcap) + min(maxVengFinal, vengHitcap)
+        minFinal = min(minReflFinal + minDeflFinal + minDarkFinal + minDtbFinal, Hitcap) + min(minVengFinal, vengHitcap)
+        avgFinal = min(avgReflFinal + avgDeflFinal + avgDarkFinal + avgDtbFinal, Hitcap) + min(avgVengFinal, vengHitcap)
+        tsFinal = min(tsReflFinal + tsDeflFinal + tsDarkFinal  + tsDtbFinal, Hitcap) + min(tsVengFinal, vengHitcap)
 
     elif variables["hitcaps"] == "Green Hp":
         Hitcap = 30000
-        maxFinal = min(maxReflFinal + maxDeflFinal + maxDarkFinal + maxDtbFinal, Hitcap) + maxVengFinal
-        minFinal = min(minReflFinal + minDeflFinal + minDarkFinal + minDtbFinal, Hitcap) + minVengFinal
-        avgFinal = min(avgReflFinal + avgDeflFinal + avgDarkFinal + avgDtbFinal, Hitcap) + avgVengFinal
-        tsFinal = min(tsReflFinal + tsDeflFinal + tsDarkFinal  + tsDtbFinal, Hitcap) + tsVengFinal
+        vengHitcap = 8000
+        maxFinal = min(maxReflFinal + maxDeflFinal + maxDarkFinal + maxDtbFinal, Hitcap) + min(maxVengFinal, vengHitcap)
+        minFinal = min(minReflFinal + minDeflFinal + minDarkFinal + minDtbFinal, Hitcap) + min(minVengFinal, vengHitcap)
+        avgFinal = min(avgReflFinal + avgDeflFinal + avgDarkFinal + avgDtbFinal, Hitcap) + min(avgVengFinal, vengHitcap)
+        tsFinal = min(tsReflFinal + tsDeflFinal + tsDarkFinal  + tsDtbFinal, Hitcap) + min(tsVengFinal, vengHitcap)
 
     else:
         maxFinal = maxReflFinal + maxDeflFinal + maxDarkFinal + maxDtbFinal + maxVengFinal
@@ -1678,13 +1682,15 @@ def calcSlamReflect():
 
     if variables["hitcaps"] == "Grey Hp":
         Hitcap = 32500
-        slam1Final = min(slam1ReflFinal + slam1DeflFinal + slam1DarkFinal + slam1DtbFinal, Hitcap) + slam1VengFinal
-        slam2Final = min(slam2ReflFinal + slam2DeflFinal + slam2DarkFinal  + slam2DtbFinal, Hitcap) + slam2VengFinal
+        vengHitcap = 8000
+        slam1Final = min(slam1ReflFinal + slam1DeflFinal + slam1DarkFinal + slam1DtbFinal, Hitcap) + min(slam1VengFinal, vengHitcap)
+        slam2Final = min(slam2ReflFinal + slam2DeflFinal + slam2DarkFinal  + slam2DtbFinal, Hitcap) + min(slam2VengFinal, vengHitcap)
 
     elif variables["hitcaps"] == "Green Hp":
         Hitcap = 30000
-        slam1Final = min(slam1ReflFinal + slam1DeflFinal + slam1DarkFinal + slam1DtbFinal, Hitcap) + slam1VengFinal
-        slam2Final = min(slam2ReflFinal + slam2DeflFinal + slam2DarkFinal  + slam2DtbFinal, Hitcap) + slam2VengFinal
+        vengHitcap = 8000
+        slam1Final = min(slam1ReflFinal + slam1DeflFinal + slam1DarkFinal + slam1DtbFinal, Hitcap) + min(slam1VengFinal, vengHitcap)
+        slam2Final = min(slam2ReflFinal + slam2DeflFinal + slam2DarkFinal  + slam2DtbFinal, Hitcap) + min(slam2VengFinal, vengHitcap)
 
     else:
         slam1Final = slam1ReflFinal + slam1DeflFinal + slam1DarkFinal + slam1DtbFinal + slam1VengFinal
@@ -1822,11 +1828,13 @@ def calcCageReflect():
 
     if variables["hitcaps"] == "Grey Hp":
         Hitcap = 32500
-        cageFinal = min(maxReflFinal + maxDeflFinal + maxDarkFinal + maxDtbFinal, Hitcap) + maxVengFinal
+        vengHitcap = 8000
+        cageFinal = min(maxReflFinal + maxDeflFinal + maxDarkFinal + maxDtbFinal, Hitcap) + min(maxVengFinal, vengHitcap)
 
     elif variables["hitcaps"] == "Green Hp":
         Hitcap = 30000
-        cageFinal = min(maxReflFinal + maxDeflFinal + maxDarkFinal + maxDtbFinal, Hitcap) + maxVengFinal
+        vengHitcap = 8000
+        cageFinal = min(maxReflFinal + maxDeflFinal + maxDarkFinal + maxDtbFinal, Hitcap) + min(maxVengFinal, vengHitcap)
 
     else:
         cageFinal = maxReflFinal + maxDeflFinal + maxDarkFinal + maxDtbFinal + maxVengFinal
