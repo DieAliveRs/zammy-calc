@@ -5,8 +5,8 @@ from PIL import Image
 digitMenuWidth = 80
 
 # green, blue, pink, cyan 
-theme = "dark"
-color = "green"
+theme = "light"
+color = "cyan"
 
 if theme == "dark":
     frameBg = "#333333"
@@ -392,6 +392,8 @@ p7chargeLabel.grid(row=0, column=1, padx=0, pady=5, sticky="w")
 p7chargeEntry.grid(row=0, column=2, padx=10, pady=5, sticky="w")
 
 p7infoLabel = ctk.CTkLabel(master=p7Frame, text="")
+p7infoLabel1 = ctk.CTkLabel(master=p7Frame, text="")
+p7infoLabel2 = ctk.CTkLabel(master=p7Frame, text="")
 
 # Player settings
 helmImage = ctk.CTkLabel(master=settingsTabs.tab("Player settings"), image=helm, text="")

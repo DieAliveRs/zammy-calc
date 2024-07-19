@@ -280,19 +280,37 @@ def updatePads():
 
 def updateSettings():
     if g.p7modeMenu.get() == "Charge value":
+        redBar, smallBomb, iteration = calcs.p7(variables["mode"], variables["enrage"])
         chargeStart, chargeCap = calcs.chargeCalcs()
 
-        g.p7infoLabel.configure(text="Charge value starts at {} and caps at {}.".format(chargeStart, chargeCap))
-        g.p7infoLabel.grid(row=3, column=0, columnspan=2, padx=g.imageXPad, pady=10, sticky="w")
+        g.p7infoLabel.configure(text="Red bar: {}".format(redBar))
+        g.p7infoLabel.grid(row=3, column=0, columnspan=2, padx=g.imageXPad, pady=5, sticky="w")
+
+        g.p7infoLabel1.configure(text="Iteration: {}".format(iteration))
+        g.p7infoLabel1.grid(row=4, column=0, columnspan=2, padx=g.imageXPad, pady=5, sticky="w")
+
+        g.p7infoLabel2.configure(text="Charge value starts at {} and caps at {}.".format(chargeStart, chargeCap))
+        g.p7infoLabel2.grid(row=5, column=0, columnspan=2, padx=g.imageXPad, pady=5, sticky="w")
 
     elif g.p7modeMenu.get() == "Iteration":
-        g.p7infoLabel.configure(text="Iterations increase every tick, starts at 0 and caps at 500.")
-        g.p7infoLabel.grid(row=3, column=0, columnspan=2, padx=g.imageXPad, pady=10, sticky="w")
+        redBar, smallBomb, iteration = calcs.p7(variables["mode"], variables["enrage"])
+        charge = calcs.iterationToCharge(variables["iteration_input"])
+
+        g.p7infoLabel.configure(text="Red bar: {}".format(redBar))
+        g.p7infoLabel.grid(row=3, column=0, columnspan=2, padx=g.imageXPad, pady=5, sticky="w")
+
+        g.p7infoLabel1.configure(text="Current charge: {}".format(charge))
+        g.p7infoLabel1.grid(row=4, column=0, columnspan=2, padx=g.imageXPad, pady=5, sticky="w")
+
+        g.p7infoLabel2.configure(text="Iterations increase every tick, starts at 0 and caps at 500.")
+        g.p7infoLabel2.grid(row=5, column=0, columnspan=2, padx=g.imageXPad, pady=5, sticky="w")
 
     elif g.p7modeMenu.get() == "Red bar":
-        g.p7infoLabel.configure(text="Red bar input can only calculate Chaos damage.")
-        g.p7infoLabel.grid(row=3, column=0, columnspan=2, padx=g.imageXPad, pady=10, sticky="w")
-        # g.p7infoLabel.grid_forget()
+        g.p7infoLabel.grid_forget()
+        g.p7infoLabel1.grid_forget()
+
+        g.p7infoLabel2.configure(text="Red bar input can only calculate Chaos damage.")
+        g.p7infoLabel2.grid(row=3, column=0, columnspan=2, padx=g.imageXPad, pady=5, sticky="w")
 
 
 def updateDamage():

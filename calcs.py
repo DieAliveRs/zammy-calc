@@ -582,8 +582,9 @@ def p7(mode, enrage):
     if mode == "Red bar":
         red_bar = variables["red_input"]
         small_bombs = 0
+        iteration = 0
     
-    return red_bar, small_bombs
+    return red_bar, small_bombs, iteration
 
 def chargeCalcs():
     if variables["enrage"] < 100:
@@ -593,6 +594,11 @@ def chargeCalcs():
     charge_cap = charge_start + charge_rate * 500
 
     return int(charge_start), int(charge_cap)
+
+def iterationToCharge(iteration):
+    chargeStart, chargeCap = chargeCalcs()
+
+    return math.floor(chargeStart + (chargeStart/100) * min(iteration, 500))
 
 ### Hp scaling stuff ###
 def phaseHp(enrage, teamSize):
@@ -906,7 +912,7 @@ def calcCage():
     return Final
 
 def calcBigBomb():
-    bigBomb, smallBomb = p7(variables["mode"], variables["enrage"])
+    bigBomb, smallBomb, iteration = p7(variables["mode"], variables["enrage"])
     bigBombMax = bigBomb * 1.1
     bigBombAvg = bigBomb * 1.05
 
@@ -947,7 +953,7 @@ def calcBigBomb():
     return int(bigMaxFinal), int(bigMinFinal), int(bigAvgFinal)
 
 def calcSmallBomb():
-    bigBomb, smallBomb = p7(variables["mode"], variables["enrage"])
+    bigBomb, smallBomb, iteration = p7(variables["mode"], variables["enrage"])
     smallTsBomb = math.floor((smallBomb * variables["pad1"])/10)
 
     cadeDR = disintegrateMod(100, variables["pad4"])
@@ -1161,7 +1167,7 @@ def calcCageHealing():
     return int(cageHealing)
 
 def calcBigBombHealing():
-    bigBomb, smallBomb = p7(variables["mode"], variables["enrage"])
+    bigBomb, smallBomb, iteration = p7(variables["mode"], variables["enrage"])
 
     bigBombMax = bigBomb * 1.1
     bigBombAvg = bigBomb * 1.05
@@ -1196,7 +1202,7 @@ def calcBigBombHealing():
     return int(bigMaxHealFinal), int(bigMinHealFinal), int(bigAvgHealFinal)
 
 def calcSmallBombHealing():
-    bigBomb, smallBomb = p7(variables["mode"], variables["enrage"])
+    bigBomb, smallBomb, iteration = p7(variables["mode"], variables["enrage"])
     smallTsBomb = math.floor((smallBomb * variables["pad1"])/10)
     
     cadeDR = disintegrateMod(100, variables["pad4"])
@@ -1401,7 +1407,7 @@ def calcCageDivert():
     return cageDivert
 
 def calcBigBombDivert():
-    bigBomb, smallBomb = p7(variables["mode"], variables["enrage"])
+    bigBomb, smallBomb, iteration = p7(variables["mode"], variables["enrage"])
 
     bigBombMax = bigBomb * 1.1
     bigBombAvg = bigBomb * 1.05
@@ -1436,7 +1442,7 @@ def calcBigBombDivert():
     return bigMaxDivertFinal, bigMinDivertFinal, bigAvgDivertFinal
 
 def calcSmallBombDivert():
-    bigBomb, smallBomb = p7(variables["mode"], variables["enrage"])
+    bigBomb, smallBomb, iteration = p7(variables["mode"], variables["enrage"])
     smallTsBomb = math.floor((smallBomb * variables["pad1"])/10)
     
     cadeDR = disintegrateMod(100, variables["pad4"])
@@ -1842,7 +1848,7 @@ def calcCageReflect():
     return int(cageFinal)
 
 def calcBigBombReflect():
-    bigBomb, smallBomb = p7(variables["mode"], variables["enrage"])
+    bigBomb, smallBomb, iteration = p7(variables["mode"], variables["enrage"])
     bigBombMax = bigBomb * 1.1
     bigBombAvg = bigBomb * 1.05
 
@@ -1911,7 +1917,7 @@ def calcBigBombReflect():
     return int(bigMaxFinal), int(bigMinFinal), int(bigAvgFinal)
 
 def calcSmallBombReflect():
-    bigBomb, smallBomb = p7(variables["mode"], variables["enrage"])
+    bigBomb, smallBomb, iteration = p7(variables["mode"], variables["enrage"])
     smallTsBomb = math.floor((smallBomb * variables["pad1"])/10)
 
     cadeDR = disintegrateMod(100, variables["pad4"])
